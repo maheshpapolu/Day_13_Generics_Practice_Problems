@@ -13,10 +13,20 @@ namespace Generics
             Array.Sort(arr); // Sorting values
             return arr; // return sorted array
         }
-        public static T FindMax(params T[] arr)// Creating generic Method to find maximum of three having any data type
+        public static T testMaximum(params T[] arr)// Creating generic Method to find maximum of three having any data type
         {
             var sorted_values = SortValue(arr); // Calling Sortvalue generic method to sort value
             return sorted_values[sorted_values.Length - 1]; // Returning last element as a Maximum
+        }
+        public static void printValue(T[] arr) // creating generic method to std out the max value
+        {
+            Console.WriteLine("\nYour entered values are : ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " "); //Displaying all the values
+            }
+            T max = testMaximum(arr); // Calling testMaximum Method
+            Console.WriteLine("\n\nMaximum of this values is : " + max); // Displaying max value
         }
 
     }
