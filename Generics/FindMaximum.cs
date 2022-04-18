@@ -6,65 +6,18 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    internal class FindMaximum
+    internal class FindMaximum<T> where T : IComparable // Creating a generic class
     {
-        public static int FindMaxInteger(int first, int second, int third) // Class Method to find maximum of three integer number
+        public static T[] SortValue(T[] arr) // creating generic method to sort the values in ascending order
         {
-            //Checking that first number is maximum or not
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0 || first.CompareTo(second) >= 0 && first.CompareTo(third) > 0 || first.CompareTo(second) > 0 && first.CompareTo(third) >= 0)
-            {
-                return first; // Retrun first as maximum
-            }
-            //Checking that second number is maximum or not
-            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0 || second.CompareTo(first) >= 0 && second.CompareTo(third) > 0 || second.CompareTo(first) > 0 && second.CompareTo(third) >= 0)
-            {
-                return second; // Retrun second as maximum
-            }
-            //Checking that third number is maximum or not
-            if (third.CompareTo(first) > 0 && third.CompareTo(second) > 0 || third.CompareTo(first) >= 0 && third.CompareTo(second) > 0 || third.CompareTo(first) > 0 && third.CompareTo(second) >= 0)
-            {
-                return third; // Retrun third as maximum
-            }
-            return first; // Return first if all the integer are same 
+            Array.Sort(arr); // Sorting values
+            return arr; // return sorted array
+        }
+        public static T FindMax(params T[] arr)// Creating generic Method to find maximum of three having any data type
+        {
+            var sorted_values = SortValue(arr); // Calling Sortvalue generic method to sort value
+            return sorted_values[sorted_values.Length - 1]; // Returning last element as a Maximum
         }
 
-        public static float FindMaxFloat(float first, float second, float third) // Class Method to find maximum of three float number
-        {
-            //Checking that first number is maximum or not
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0 || first.CompareTo(second) >= 0 && first.CompareTo(third) > 0 || first.CompareTo(second) > 0 && first.CompareTo(third) >= 0)
-            {
-                return first; // Retrun first as maximum
-            }
-            //Checking that second number is maximum or not
-            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0 || second.CompareTo(first) >= 0 && second.CompareTo(third) > 0 || second.CompareTo(first) > 0 && second.CompareTo(third) >= 0)
-            {
-                return second; // Retrun second as maximum
-            }
-            //Checking that third number is maximum or not
-            if (third.CompareTo(first) > 0 && third.CompareTo(second) > 0 || third.CompareTo(first) >= 0 && third.CompareTo(second) > 0 || third.CompareTo(first) > 0 && third.CompareTo(second) >= 0)
-            {
-                return third; // Retrun third as maximum
-            }
-            return first; // Return first if all the float number are same 
-        }
-        public static string FindMaxString(string first, string second, string third) // Class Method to find maximum of three string by alphabetical order
-        {
-            //Checking that first number is maximum or not
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0 || first.CompareTo(second) >= 0 && first.CompareTo(third) > 0 || first.CompareTo(second) > 0 && first.CompareTo(third) >= 0)
-            {
-                return first; // Retrun first as maximum
-            }
-            //Checking that second number is maximum or not
-            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0 || second.CompareTo(first) >= 0 && second.CompareTo(third) > 0 || second.CompareTo(first) > 0 && second.CompareTo(third) >= 0)
-            {
-                return second; // Retrun second as maximum
-            }
-            //Checking that third number is maximum or not
-            if (third.CompareTo(first) > 0 && third.CompareTo(second) > 0 || third.CompareTo(first) >= 0 && third.CompareTo(second) > 0 || third.CompareTo(first) > 0 && third.CompareTo(second) >= 0)
-            {
-                return third; // Retrun third as maximum
-            }
-            return first; // Return first if all the string are same 
-        }
     }
 }
