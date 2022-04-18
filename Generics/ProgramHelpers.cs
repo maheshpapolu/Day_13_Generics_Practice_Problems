@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Generics
 {
-    internal class Program
+    internal static class ProgramHelpers
     {
         static void Main(string[] args)
         {
@@ -66,4 +61,3 @@ namespace Generics
         }
     }
 }
-

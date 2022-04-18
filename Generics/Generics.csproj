@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FindMaximum.cs" />
+    <Compile Include="FindMaximumBase.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
