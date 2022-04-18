@@ -14,6 +14,7 @@ namespace Generics
             Console.WriteLine("Welcome");
 
             Console.WriteLine("1. Find maximum of three Integer number\n2.Find maximum of three Float number");
+            Console.WriteLine("3.Find maximum of string");
             Console.WriteLine("Enter your choice : ");
             int ch = Convert.ToInt32(Console.ReadLine());   // Storing user's choice
             switch (ch)
@@ -44,6 +45,20 @@ namespace Generics
                     Console.WriteLine($"Maximum float number of ({f},{s},{t}) is : {maxFloat}");
                     Console.ReadLine();
                     break;
+                case 3:
+                    string a, b, c;
+                    //Get the 3 string from the user
+                    Console.WriteLine("Enter first string : ");
+                    a = Console.ReadLine();
+                    Console.WriteLine("Enter second string : ");
+                    b = Console.ReadLine();
+                    Console.WriteLine("Enter third string : ");
+                    c = Console.ReadLine();
+                    string maxString = FindMaximum.FindMaxString(a, b, c); // Storing value as maximum which is returned by Method
+                    Console.WriteLine($"Maximum float number of ({a},{b},{c}) is : {maxString}");
+                    Console.ReadLine();
+                    break;
+
             }
 
         }
